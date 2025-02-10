@@ -1,7 +1,7 @@
 {
   "name": "sanity-search",
   "description": "A lightweight and configurable search component for Sanity.io and Next.js websites, built with React and TypeScript.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

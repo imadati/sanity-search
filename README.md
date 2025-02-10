@@ -9,6 +9,10 @@ A **lightweight** and **configurable** search component for **Sanity.io** and **
 - 🎨 **Customizable UI & Icons**
 - ⚡ **Pluggable Search Query Generator**
 
+## 💻 Demo
+
+[Live Demo](https://www.imadattif.com/blog)
+
 ## 🚀 Installation
 
 ```sh

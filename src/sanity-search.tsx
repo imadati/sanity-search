@@ -78,10 +78,10 @@ export default function SanitySearch({
   }
 
   return (
-    <div className="sanity-search relative w-full md:w-80" ref={dropdownRef}>
-      <div className="sanity-search-input-container relative w-full">
+    <div className="sanity_search" ref={dropdownRef}>
+      <div className="sanity_search__input_container">
         <input
-          className="sanity-search-input w-full pr-4 pl-8 pl-2 border rounded-md"
+          className="sanity_search__input"
           onChange={handleInputChange}
           onClick={handleOpenSearchDropdown}
           onKeyDown={handleOpenSearchDropdown}
@@ -89,25 +89,25 @@ export default function SanitySearch({
           type="text"
           value={searchTerm}
         />
-        <div className="sanity-search-icon-container absolute inset-y-0 top-2 left-4 flex items-center pr-3 pointer-events-none">
+        <div className="sanity_search__icon_container">
           {isLoading ? ui.loadingIcon : ui.searchIcon}
         </div>
       </div>
       {!isLoading && isOpen && (
-        <div className="sanity-search-dropdown absolute z-10 mt-1 max-h-96 w-full overflow-y-auto border border-neutral-200 bg-white text-black lg:right-0 lg:w-80">
+        <div className="sanity_search__dropdown">
           {searchResults.length > 0 ? (
             searchResults.map((item, index) => (
               <LinkComponent
-                className="sanity-search-result-item block border-b border-white/10 p-4 transition-colors last:border-none hover:bg-neutral-50"
+                className="sanity_search__result_item"
                 href={item.href}
                 key={index}
               >
-                <h4 className="sanity-search-result-title mb-1 text-sm">
+                <h4 className="sanity_search__result_title">
                   {ui.isHighlightEnabled
                     ? highlightText(item.title, searchTerm)
                     : item.title}
                 </h4>
-                <p className="sanity-search-result-description line-clamp-2 text-xs text-neutral-700">
+                <p className="sanity_search__result_description">
                   {ui.isHighlightEnabled
                     ? highlightText(item.description, searchTerm)
                     : item.description}
@@ -115,7 +115,7 @@ export default function SanitySearch({
               </LinkComponent>
             ))
           ) : (
-            <p className="sanity-search-no-results p-4 text-sm">
+            <p className="sanity_search__no_results">
               {ui.noResultsText || NO_RESULTS_TEXT}
             </p>
           )}

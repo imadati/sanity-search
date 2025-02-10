@@ -129,14 +129,25 @@ Generates a structured **GROQ query** to fetch data from **Sanity.io** and retur
 ```ts
 const {query, params} = createSanitySearchQuery({
   documentType: "post",
-  documentFragment: "{ title, description, slug }",
-  searchableFields: ["title", "body"],
+  documentFragment: "{ title, description, body, href }",
+  searchableFields: ["title", "description", "body"],
   searchTerm: "example",
 });
 ```
 
 ## 🎨 Styling
-The component uses **minimal CSS classes** and works with **Tailwind CSS** or any global styles. You can customize it via `className`.
+You can customize the component using classes, here is a list of classes you can use:
+
+- `sanity_search`
+- `sanity_search__input_container`
+- `sanity_search__input`
+- `sanity_search__icon_container`
+- `sanity_search__dropdown`
+- `sanity_search__result_item`
+- `sanity_search__result_title`
+- `sanity_search__result_description`
+- `sanity_search__no_results`
+
 
 ## 📜 License
 MIT License © 2025 Imad Attif

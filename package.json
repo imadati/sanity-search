@@ -1,5 +1,6 @@
 {
   "name": "sanity-search",
+  "description": "A lightweight and configurable search component for Sanity.io and Next.js websites, built with React and TypeScript.",
   "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -7,7 +8,9 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "dependencies": {
     "react": "^19.0.0"
@@ -15,5 +18,18 @@
   "devDependencies": {
     "typescript": "^5.0.0",
     "@types/react": "^19.0.0"
-  }
+  },
+  "keywords": [
+    "sanity",
+    "sanity-search",
+    "search-component",
+    "nextjs",
+    "search",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "cms",
+    "blog",
+    "website-search"
+  ]
 }

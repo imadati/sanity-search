@@ -10,6 +10,7 @@
         "moduleResolution": "node"
     },
     "include": [
-        "src"
+        "src",
+        "src/**/*.css"
     ]
 }

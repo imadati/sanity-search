@@ -5,17 +5,17 @@ import { useEffect, useRef, useState } from "react";
 import { SanitySearchConfig, SearchResult } from "./types";
 import { highlightText } from "./helpers";
 import {
-  NO_RESULTS_TEXT,
-  SEARCH_PLACEHOLDER,
-  SEARCH_DEBOUNCE_DELAY,
-  MINIMUM_SEARCH_LENGTH,
+  DEFAULT_NO_RESULTS_TEXT,
+  DEFAULT_SEARCH_PLACEHOLDER,
+  DEFAULT_SEARCH_DEBOUNCE_DELAY,
+  DEFAULT_MINIMUM_SEARCH_LENGTH,
 } from "./constants";
 
-export interface SanitySearchProps {
+export type SanitySearchProps = {
   config?: SanitySearchConfig;
   onSearch: (searchTerm: string) => Promise<SearchResult[]>;
   LinkComponent?: React.ComponentType<any> | "a";
-}
+};
 
 export default function SanitySearch({
   config,
@@ -51,7 +51,7 @@ export default function SanitySearch({
     const delayDebounceFn = setTimeout(async () => {
       if (
         searchTerm.length >=
-        (behavior?.minimumSearchLength || MINIMUM_SEARCH_LENGTH)
+        (behavior?.minimumSearchLength || DEFAULT_MINIMUM_SEARCH_LENGTH)
       ) {
         setIsLoading(true);
         setIsOpen(true);
@@ -62,7 +62,7 @@ export default function SanitySearch({
         setSearchResults([]);
         setIsOpen(false);
       }
-    }, behavior?.searchDebounceDelay || SEARCH_DEBOUNCE_DELAY);
+    }, behavior?.searchDebounceDelay || DEFAULT_SEARCH_DEBOUNCE_DELAY);
 
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, behavior, onSearch]);
@@ -85,7 +85,7 @@ export default function SanitySearch({
           onChange={handleInputChange}
           onClick={handleOpenSearchDropdown}
           onKeyDown={handleOpenSearchDropdown}
-          placeholder={ui.placeholder || SEARCH_PLACEHOLDER}
+          placeholder={ui.placeholder || DEFAULT_SEARCH_PLACEHOLDER}
           type="text"
           value={searchTerm}
         />
@@ -116,7 +116,7 @@ export default function SanitySearch({
             ))
           ) : (
             <p className="sanity_search__no_results">
-              {ui.noResultsText || NO_RESULTS_TEXT}
+              {ui.noResultsText || DEFAULT_NO_RESULTS_TEXT}
             </p>
           )}
         </div>
